@@ -1,0 +1,26 @@
+@startuml
+
+abstract class Subject{
+
+ + abstract void : visit()
+}
+
+class RealSubject{
+
+  + void : visit()
+}
+
+class ProxySubject{
+
+   - RealSubject mSubject
+
+   + void : visit()
+}
+
+
+Subject <|-- RealSubject
+Subject <|-- ProxySubject
+
+ProxySubject --> RealSubject
+
+@enduml

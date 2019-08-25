@@ -1,0 +1,65 @@
+@startuml
+
+
+
+together {
+
+abstract class Mediator{
+
+   # ColleagueA colleagueA
+   # ColleagueB colleagueB
+
+   + abstract void :method()
+
+   + void :setColleagueA(ColleagueA colleagueA)
+   + void :setColleagueB(ColleagueB colleagueB)
+}
+
+class ConcreateMediator{
+
+    + void : method()
+}
+
+}
+
+
+together {
+
+abstract class Colleague{
+
+  - Mediator Mediator
+
+  + void : Mediator(Mediator mediator)
+
+  + abstract void : action()
+}
+
+
+class ColleagueA{
+
+   + void : ColleagueA(Mediator mediator)
+
+   + void : action()
+
+}
+
+class ColleagueB{
+
+   + void : ColleagueB(Mediator mediator)
+
+   + void : action()
+
+}
+
+}
+
+
+ Colleague <|-- ColleagueA
+ Colleague <|-- ColleagueB
+
+ Mediator <|-- ConcreateMediator
+
+ ConcreateMediator --> ColleagueA
+ ConcreateMediator --> ColleagueB
+
+@enduml
