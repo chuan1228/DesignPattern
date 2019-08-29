@@ -1,0 +1,39 @@
+@startuml
+
+abstract class Component{
+
+ # name : String
+
+ + Component(String name)
+
+ + abstract void doSomething()
+
+}
+
+
+class Leaf{
+
+  + Leaf(String name)
+
+  + void doSomething()
+}
+
+
+class Composite{
+
+ - components : List<Component>
+
+ + Composite(String name)
+
+ + void addChild(Component component)
+
+ + void removeChild(Component component)
+
+ + Component getChildren(int i)
+}
+
+
+Component <|-- Leaf
+Component --o Composite
+
+@enduml
