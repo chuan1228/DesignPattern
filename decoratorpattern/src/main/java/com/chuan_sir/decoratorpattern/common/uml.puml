@@ -1,0 +1,40 @@
+@startuml
+
+abstract class Component{
+
+ + {abstract} void operate()
+
+}
+class ConCreateComponent{
+
+    + void operate()
+}
+abstract class Decorator{
+
+    - Component  component
+
+    + Decorator(Component component)
+
+    + void operate()
+}
+class ConCreateDecoratorA{
+
+    + ConCreateDecoratorA(Component component)
+
+    + void operate()
+
+    + void operateA()
+
+    + void operateB()
+}
+
+
+Component <|-- ConCreateComponent
+
+Component <--o Decorator
+
+Decorator <|-- ConCreateDecoratorA
+
+
+
+@enduml

@@ -1,1 +1,1 @@
-include ':app', ':mediatorpattern', ':proxypattern', ':compositepattern', ':designprinciple'
+include ':app', ':mediatorpattern', ':proxypattern', ':compositepattern', ':designprinciple', ':adapterpattern', ':decoratorpattern'
